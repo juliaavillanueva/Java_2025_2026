@@ -1,17 +1,19 @@
+import java.util.Scanner;
+
 // Clase base (superclase)
 abstract class Animal {
-    private String nombre  // Falta punto y coma
+    protected String nombre;  
     
-    // Constructor faltante
+    // Constructor added
     public Animal(String nombre) {
-        this.nombre = nombre
+        this.nombre = nombre;
     }
     
     // Método mal definido (debe ser abstract)
-    public void hacerSonido() 
+    public abstract void hacerSonido();
     
     public void moverse() {
-        System.out.println("El animal se está moviendo")
+        System.out.println("El animal se está moviendo");
     }
 }
 
@@ -19,21 +21,21 @@ abstract class Animal {
 class Perro extends Animal {
     
     public Perro(String nombre) {
-        super() // Error: Falta pasar el parámetro nombre
+        super(nombre); // Se pasa el parámetro nombre al constructor de la superclase
     }
     
-    @Override // Error: No está sobrescribiendo nada válido
-    public void sonido() { 
-        System.out.println("El perro ladra")
+    @Override
+    public void hacerSonido() { 
+        System.out.println("El perro ladra");
     }
     
     public void moverse() {
-        super.moverse()
-        System.out.println("El perro corre")
+        super.moverse();
+        System.out.println("El perro corre");
     }
 
     public void mostrarNombre() {
-        System.out.println("El nombre del perro es: " + nombre) // Error: nombre es privado en la superclase
+        System.out.println("El nombre del perro es: " + nombre); // Error: nombre es privado en la superclase
     }
     
 // Falta cerrar la llave de la clase
@@ -41,15 +43,16 @@ class Perro extends Animal {
 // Clase principal con errores
 public class Main {
     public static void main(String[] args) {
-        Animal miAnimal = new Animal("Bobby") // Error: No se puede instanciar una clase abstracta
+        Animal miAnimal = new Perro("Bobby"); // Se utiliza la subclase Perro para instanciar
         
-        Perro miPerro = new Perro("Firulais") 
-        miPerro.hacerSonido()
-        miPerro.correr() // Error: No existe método "correr"
+        Perro miPerro = new Perro("Firulais");
+        miPerro.hacerSonido();
 
-        Scanner scanner = new Scanner(System.in) // Falta import java.util.Scanner;
-        System.out.println("Introduce un nombre para el perro")
-        String nuevoNombre = scanner.nextLine()
-        Perro.mostrarNombre() // Error: método no es estático, no se llama con la clase
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println("Introduce un nombre para el perro"); 
+        String nuevoNombre = scanner.nextLine();
+        miPerro.mostrarNombre(); 
     }
 }
+}
+

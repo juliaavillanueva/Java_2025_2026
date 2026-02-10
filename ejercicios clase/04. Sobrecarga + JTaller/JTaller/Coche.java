@@ -4,6 +4,12 @@ public class Coche {
     String modelo;
     int km;
 
+    public Coche(String matricula, String modelo, int km){
+        this.matricula = matricula;
+        this.modelo = modelo;
+        this.km = km;
+    }
+
     public String getMatricula() {
         return matricula;
     }
@@ -28,16 +34,8 @@ public class Coche {
         this.km = km;
     }
 
-    public Coche(String matricula, String modelo, int km){
-        this.matricula = matricula;
-        this.modelo = modelo;
-        this.km = km;
-    }
-
-  
-
     public void mostrar_info(){
-        System.out.println("Matricula: " + matricula + "Modelo: "+ modelo);
+        System.out.println("Matricula: " + matricula + " Modelo: " + modelo);
     }
     
 }

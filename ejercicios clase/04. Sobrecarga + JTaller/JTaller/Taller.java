@@ -8,8 +8,6 @@ public Taller(int capacidad){
     this.numCoches = 0;
 }
 
-
-
 public void addCoche(Coche c){
     if (numCoches < this.coches.length){
         this.coches[numCoches] = c;
@@ -18,7 +16,6 @@ public void addCoche(Coche c){
         System.out.println("No se puede añadir el coche!!");
     }
 }
-
 
 public void mostrarCoches(){
 
@@ -43,8 +40,5 @@ public String calcular_maximo(){
     }
     return matricula;
 }
-
-
-
-    
+ 
 }

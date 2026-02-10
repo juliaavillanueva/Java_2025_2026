@@ -1,19 +1,19 @@
 class Perro extends Animal {
     
     public Perro(String nombre) {
-        super() 
+        super(nombre); 
     }
     
     public void sonido() { 
-        System.out.println("El perro ladra")
+        System.out.println("El perro ladra");
     }
     
     public void moverse() {
-        super.moverse()
-        System.out.println("El perro corre")
+        super.moverse();
+        System.out.println("El perro corre");
     }
 
-    public void mostrarNombre() {
+    public String mostrarNombre() {
         return "El nombre del perro es: " + nombre;
     }
 }
